@@ -1,0 +1,105 @@
+.container-admin{
+    padding: 80px 20px;
+}
+
+.container-tabs{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0 ;
+    background-color: black;
+}
+
+.container-tabs button{
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    padding: 15px;
+    background-color: #CBEC36;
+    border-radius: 25px;
+    border: none;
+}
+
+
+.container-tabs button:hover{
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    padding: 15px;
+    background-color: white;
+    border-radius: 25px;
+    border: none;
+}
+
+
+.container-tabs .active {
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    padding: 15px;
+    background-color: white;
+    border-radius: 25px;
+    border: none;
+}
+
+
+#container-contenido{
+    padding: 20px 80px;
+}
+
+/*ESTILOS DE LA TABLA */
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+
+
+.container-btns{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container-btn-agregar-entrada{
+    padding-top: 80px;
+}
+
+.container-imagenDestacada{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none !important;
+}
+
+.imagenDestacada{
+    max-width: 100px;
+}

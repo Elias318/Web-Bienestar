@@ -1,0 +1,310 @@
+
+
+
+@media screen and (min-width:768px){
+    .banner{
+        background-image: url('../images/banner.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .container-titulos{
+        padding: 0 0 0px 80px;
+        height: 80%;
+        width: 40%;
+        display: flex;
+        gap: 37px;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+    }
+    
+    .container-titulos h1{
+        
+        font-size: 64px;
+        font-weight: 700;
+    }
+    
+    .container-titulos h3{
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    .btn-1 {
+        text-decoration: none;
+        font-weight: 700;
+        color: black;
+        padding: 15px;
+        background-color: #CBEC36;
+        border-radius: 25px;
+        box-shadow: 4px 4px 10px black;
+    }
+
+
+    /*SECCION EJERCICIOS*/
+
+
+    .container-ejercicios{
+        background: linear-gradient(to bottom, #CBEC36 60%, #CBEC36 65%, #A956E9 100%);
+       
+        padding: 80px 80px ;
+    }
+
+    .container-ejercicios h1{
+        
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .container-ejercicios h3{
+        font-family: 'Nunito', sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .container-encabezado-ejercicios{
+        
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container-btns-ejercicios{
+        width: 50%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 15px;
+    }
+
+
+    .btn-2{
+        text-decoration: none;
+        font-weight: 700;
+        color: black;
+        padding: 15px 35px;
+        background-color: #CBEC36;
+        border: 1px solid black;
+        border-radius: 25px;
+    }
+
+
+    .btn-2:hover {
+        background-color: #E2FF61;
+        box-shadow: 4px 4px 10px black;
+        border: none;
+    }
+
+
+    .container-tarjetas-ejercicios{
+        
+        
+        padding: 80px 0px;
+        display: flex;
+        justify-content: space-between;
+        
+        gap: 30px;
+    }
+
+    .tarjeta-ejercicio  {
+        width: 50%;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       gap: 30px;
+
+
+    }
+
+    .tarjeta-ejercicio h3{
+        font-family: 'Nunito', sans-serif;
+        text-align: start;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .tarjeta-ejercicio p{
+        font-family: 'Nunito', sans-serif;
+        height: 80px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .btn-negro{
+        width: 100px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        padding: 15px 35px;
+        background-color: black;
+        border: 1px solid black;
+        border-radius: 25px; 
+    }
+
+    
+
+    
+   
+}
+
+@media screen and (max-width: 767px) {
+
+    .banner{
+        background-image: url('../images/banner-mb.png'); 
+        
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 80vh;
+        width: 100%;
+    }
+
+    .container-titulos{
+        padding: 0 0 0px 20px;
+        height: 80%;
+        width: 50%;
+        display: flex;
+        gap: 37px;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+    }
+    
+    .container-titulos h1{
+        
+        font-size: 35px;
+        font-weight: 700;
+    }
+    
+    .container-titulos h3{
+        font-family: 'Nunito', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    .container-titulos a{
+        text-decoration: none;
+        font-weight: 700;
+        color: black;
+        padding: 15px;
+        background-color: #CBEC36;
+        border-radius: 25px;
+        box-shadow: 4px 4px 10px black;
+    }
+
+
+
+       /*SECCION EJERCICIOS*/
+
+
+       .container-ejercicios{
+        background: linear-gradient(to bottom, #CBEC36 60%, #CBEC36 65%, #A956E9 100%);
+       
+        padding: 80px 20px ;
+    }
+
+    .container-ejercicios h1{
+        
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .container-ejercicios h3{
+        font-family: 'Nunito', sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .container-encabezado-ejercicios{
+        
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    .container-btns-ejercicios{
+        width: 50%;
+        display: flex;
+        
+        align-items: center;
+        
+        gap: 15px;
+    }
+
+
+    .btn-2{
+        text-decoration: none;
+        font-weight: 700;
+        color: black;
+        padding: 15px 35px;
+        background-color: #CBEC36;
+        border: 1px solid black;
+        border-radius: 25px;
+    }
+
+
+    .btn-2:hover {
+        background-color: #E2FF61;
+        box-shadow: 4px 4px 10px black;
+        border: none;
+    }
+
+
+    .container-tarjetas-ejercicios{
+        padding: 80px 0;
+        
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        
+        
+    }
+
+    .tarjeta-ejercicio  {
+       
+       max-width: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       gap: 30px;
+
+
+    }
+
+    .tarjeta-ejercicio h3{
+        font-family: 'Nunito', sans-serif;
+        text-align: start;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .tarjeta-ejercicio p{
+        font-family: 'Nunito', sans-serif;
+        height: 80px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .btn-negro{
+        width: 100px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        padding: 15px 35px;
+        background-color: black;
+        border: 1px solid black;
+        border-radius: 25px; 
+    }
+
+    
+
+}
