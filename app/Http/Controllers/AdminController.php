@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function mostrarPanel(Request $request){
+        
+        $entradas = EntradaModel::with('categoria')->get();
         $entradas = EntradaModel::all();
-
-
         return view('admin.vistaAdmin', compact('entradas'));
     }
 }

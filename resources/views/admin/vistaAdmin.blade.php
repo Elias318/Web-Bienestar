@@ -33,7 +33,14 @@
                         <td class="container-imagenDestacada"><img class="imagenDestacada" src="{{asset($entrada->imagenDestacada)}}" alt="Imagen destacada"></td>
                         <td>{{$entrada ->titulo_entrada }}</td>
                         <td>{{$entrada->fecha_creacion}}</td>
-                        <td></td>
+                        <td>
+                        @if($entrada->categoria)
+                            {{$entrada->categoria->nombre_categoria}}
+                        @else
+                            Sin categoria
+
+                        @endif
+                    </td>
                         <td class="container-btns"><button>Borrar</button> <button>Editar</button></td>
                     </tr>
                        
