@@ -11,12 +11,12 @@ Route::get('/', function () {
 
 
 Route::get('/crear-cuenta', function () {
-    return view('crear_cuenta');
+    return view('loggin.crear_cuenta');
 })->name('crear-cuenta');
 
 
 Route::get('/iniciar-sesion', function () {
-    return view('inicio_sesion');
+    return view('loggin.inicio_sesion');
 })->name('iniciar-sesion');
 
 
@@ -27,6 +27,9 @@ Route::get('/vistaAdmin', [AdminController::class,'mostrarPanel'])->name('vistaA
 Route::get('/ejercicio-create', [EntradaController::class,'create'])->name('ejercicio-create');
 
 Route::post('/ejercicio-store', [EntradaController::class,'store'])->name('ejercicio-store');
+
+Route::delete('/entrada/{entrada}', [EntradaController::class,'destroy'])->name('ejercicio.destroy');
+
 
 
 

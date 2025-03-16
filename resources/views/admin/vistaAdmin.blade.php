@@ -41,7 +41,19 @@
 
                         @endif
                     </td>
-                        <td class="container-btns"><button>Borrar</button> <button>Editar</button></td>
+                    <td>
+                        <div>
+                            <form action="/entrada/{{$entrada->id_entrada}}" method="post">
+                                @csrf
+                                @method("DELETE")
+        
+                                <button class="btn-accion">Borrar</button>
+
+                            </form>
+                        </div>
+                    </td>
+                  
+                        
                     </tr>
                        
 

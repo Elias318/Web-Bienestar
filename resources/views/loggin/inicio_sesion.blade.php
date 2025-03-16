@@ -1,4 +1,4 @@
-@include('header');
+@include('header')
 
 <body>
 
@@ -10,7 +10,11 @@
     
     
         <div class="container-form">
-    
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{session('error')}}
+                </div>
+            @endif
     
             <form action="{{route('login')}}" method="POST">
                 @csrf
@@ -42,4 +46,4 @@
     
 
 </body>
-@include('footer');
+@include('footer')

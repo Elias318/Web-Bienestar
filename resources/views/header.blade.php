@@ -47,8 +47,14 @@
                         <a href="#">Cuenta</a>
                         <h4>{{Auth::user()->username}}</h4>
                         <div>
-                            
+                            @if(Auth::user()->imgDePerfil == NULL)
+                            <img class="imagen-perfil-header" src="{{asset('/images/imgPerfil/imgDefault.png' )}}" alt="Imagen de perfil default">
+                            @else
                             <img class="imagen-perfil-header" src="{{asset(Auth::user()->imgDePerfil )}}" alt="Imagen de perfil">
+
+                            @endif
+
+
                         </div>
                         
                         
@@ -63,7 +69,12 @@
                         </form>
                         <a href="#">Admin</a>
                         <div>
-                            <img class="imagen-perfil-header" src="{{asset(Auth::user()->imgDePerfil ?? 'images/imgPerfil/imgDefault.png' )}}" alt="Imagen de perfil">
+                            @if(Auth::user()->imgDePerfil == NULL)
+                            <img class="imagen-perfil-header" src="{{asset('/images/imgPerfil/imgDefault.png' )}}" alt="Imagen de perfil default">
+                            @else
+                            <img class="imagen-perfil-header" src="{{asset(Auth::user()->imgDePerfil )}}" alt="Imagen de perfil">
+
+                            @endif
                         </div>
                         
                         

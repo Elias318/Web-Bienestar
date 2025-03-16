@@ -98,8 +98,14 @@ class EntradaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(EntradaModel $entrada)
     {
-        //
+        $entradaABorrar = $entrada->delete();
+
+        if($entradaABorrar){
+             return back()->with("success", "Se elimino el producto correctamente");
+        }else{
+             return back()->with("fail" ,"No se pudo eliminar");
+        }
     }
 }

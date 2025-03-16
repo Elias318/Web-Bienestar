@@ -87,6 +87,8 @@ class LoginController extends Controller
         if(Auth::attempt (["username" => $data["username_login"], "password"=> $data["password_login"]])){
             $request->session()->regenerate();
             return redirect()->intended("/");
+        }else{
+            return back()->with('error', 'No se encontro el usuario');
         }
 
     }
