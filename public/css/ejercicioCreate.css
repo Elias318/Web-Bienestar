@@ -1,0 +1,15 @@
+.container-agregar-entrada{
+    background-color: aquamarine;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+   
+    padding: 80px 80px;
+}
+
+.container-form-agregar-entrada form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}

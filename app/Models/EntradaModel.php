@@ -10,8 +10,8 @@ class EntradaModel extends Model
     protected $table = "entradas";
     protected $primaryKey = "id_entrada";
 
-    public $timestamps = true;
-    protected $fillable = ["titulo_entrada" , "descripcion_entrada" , "imagenDestacada","fecha_creacion","categoria_id"];
+    public $timestamps = false;
+    protected $fillable = ["titulo_entrada" , "descripcion_entrada" , "imagenDestacada","galeria","fecha_creacion","categoria_id"];
 
 
     public function categoria():BelongsTo{

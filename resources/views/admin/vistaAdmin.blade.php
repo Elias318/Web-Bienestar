@@ -42,6 +42,13 @@
                         @endif
                     </td>
                     <td>
+                      
+                        {{--PARA MOSTRAR LA GALERIA
+                         @foreach(json_decode($entrada->galeria) as $imagen)
+                        <img src="{{ asset($imagen) }}" alt="Imagen de la galería">
+                        @endforeach --}}
+                    
+
                         <div>
                             <form action="/entrada/{{$entrada->id_entrada}}" method="post">
                                 @csrf

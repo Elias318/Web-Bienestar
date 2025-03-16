@@ -20,7 +20,7 @@ class EntradaController extends Controller
      */
     public function create()
     {
-        return view('ejercicios.cuerpo.ejercicioCuerpoCreate');
+        return view('ejercicios.cuerpo.ejercicioCreate');
     }
 
     /**
@@ -28,46 +28,64 @@ class EntradaController extends Controller
      */
     public function store(Request $request)
     {
+        
         $data = $request->validate([
-            "titulo_entrada"=>['required'],
-            "descripcion_entrada"=>['required'],
-            "img_entrada"=>['image','mimes:jpeg,png,jpg,gif', 'max:2048']
-
-
-
+            "titulo-entrada"=>['required'],
+            "descripcion-entrada"=>['required'],
+            "img-entrada"=>['image','mimes:jpeg,png,jpg,gif', 'max:2048'],
+            "categoria-entrada"=>['required'],
+            "galeria-entrada.*" => ['image', 'mimes:jpeg,png,jpg,gif', 'max:2048','required'],
         ],[
-            "titulo_entrada.required" => "Este campo es obligatorio",
-            "descripcion_entrada.required" => "Este campo es obligatorio",
-            "img_entrada.image"=> "Este archivo no es una imagen",
-            "img_entrada.mimes" => "La imágen deben estar en formato jpeg, png, jpg o gif!",
-            "img_entrada.max" => "La imagen no puede superar los 2 MB!"
+            "titulo-entrada.required" => "Este campo es obligatorio",
+            "descripcion-entrada.required" => "Este campo es obligatorio",
+            "img-entrada.image"=> "Este archivo no es una imagen",
+            "img-entrada.mimes" => "La imágen deben estar en formato jpeg, png, jpg o gif!",
+            "img-entrada.max" => "La imagen no puede superar los 2 MB!",
+            "galeria-entrada.*.image" => "Uno de los archivos no es una imagen",
+            "galeria-entrada.*.mimes" => "Las imágenes deben estar en formato jpeg, png, jpg o gif!",
+            "galeria-entrada.*.max" => "Cada imagen no puede superar los 2 MB!"
 
 
         ]);
-
+        
        
-
-        if($request->hasFile('img_entrada')){
-            $nombreArchivo = uniqid().'_'. $request->file('img_entrada')->getClientOriginalName();
+        $rutaImagen=Null;
+        $rutasGaleria = [];
+        if($request->hasFile('img-entrada')){
+            $nombreArchivo = uniqid().'_'. $request->file('img-entrada')->getClientOriginalName();
 
             $rutaImagen = 'images/imgEntradas/' . $nombreArchivo;
-            $request->file('img_entrada')->move(public_path('images/imgEntradas'), $nombreArchivo);
+            $request->file('img-entrada')->move(public_path('images/imgEntradas'), $nombreArchivo);
 
-             // Guardar la ruta de la imagen en la base de datos
-
-             $entrada = EntradaModel::create([
-
-                'titulo'=>$data['titulo_entrada'],
-                'descripcion'=> $data['descripcion_entrada'],
-                'fecha_creacion'=>now(),
-                'imagenDestacada'=> $rutaImagen
-            ]);
-            
-
-            
         }
 
-        return response()-> redirectTo("/")->with('success',"Entrada agregada correctamente");
+        if($request->hasFile('galeria-entrada')){
+           
+
+            foreach($request->file('galeria-entrada') as $imagen){
+                $nombreArchivo = uniqid() . '_' . $imagen->getClientOriginalName();
+                $ruta = 'images/imgEntradas/' . $nombreArchivo;
+                $imagen->move(public_path('images/imgEntradas'), $nombreArchivo);
+                $rutasGaleria[] = $ruta; // Guardamos la ruta
+            }
+            
+
+
+        }
+
+        $entrada = EntradaModel::create([
+
+            'titulo_entrada'=>$data['titulo-entrada'],
+            'descripcion_entrada'=> $data['descripcion-entrada'],
+            'fecha_creacion'=>now(),
+            'imagenDestacada'=> $rutaImagen,
+            'categoria_id'=>$data['categoria-entrada'],
+            'galeria'=>json_encode($rutasGaleria)
+        ]);
+
+
+
+        return response()-> redirectTo("vistaAdmin")->with('success',"Entrada agregada correctamente");
         
     }
 

@@ -26,7 +26,7 @@ Route::get('/vistaAdmin', [AdminController::class,'mostrarPanel'])->name('vistaA
 
 Route::get('/ejercicio-create', [EntradaController::class,'create'])->name('ejercicio-create');
 
-Route::post('/ejercicio-store', [EntradaController::class,'store'])->name('ejercicio-store');
+Route::post('/ejercicio', [EntradaController::class,'store'])->name('ejercicio');
 
 Route::delete('/entrada/{entrada}', [EntradaController::class,'destroy'])->name('ejercicio.destroy');
 
