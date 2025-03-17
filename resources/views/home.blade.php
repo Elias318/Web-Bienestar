@@ -18,7 +18,7 @@
     </div>
 
 
-    <section class="container-ejercicios">
+    <section class="container-ejercicios-home">
         <div class="container-encabezado-ejercicios">
             <div class="container-texto-ejercicios">
                 <h3>Ejercicios del mes</h3>

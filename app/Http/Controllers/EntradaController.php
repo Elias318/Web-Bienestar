@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoriaModel;
 use App\Models\EntradaModel;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,9 @@ class EntradaController extends Controller
      */
     public function create()
     {
-        return view('ejercicios.cuerpo.ejercicioCreate');
+
+        $categorias = CategoriaModel::all();
+        return view('ejercicios.cuerpo.ejercicioCreate', compact('categorias'));
     }
 
     /**

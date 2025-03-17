@@ -1,0 +1,51 @@
+
+.container-general-blog{
+    padding: 80px 80px;
+}
+
+
+.container-ejercicios{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+.tarjeta-ejercicio{
+    background-color: antiquewhite;
+    padding: 20px 20px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.container-categorias-ejercicios{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+
+.btnCategoria{
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    padding: 15px;
+    background-color: #CBEC36;
+    border-radius: 25px;
+    border: none;
+}
+
+.btnCategoria:hover{
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    padding: 15px;
+    background-color: white;
+    border-radius: 25px;
+    border: none;
+}

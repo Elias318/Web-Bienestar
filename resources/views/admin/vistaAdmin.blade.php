@@ -21,6 +21,8 @@
                         <th>Titulo</th>
                         <th>Fecha</th>
                         <th>Categorias</th>
+                        <th>Categorias</th>
+
                         <th></th>
                         
                        
@@ -37,7 +39,7 @@
                         @if($entrada->categoria)
                             {{$entrada->categoria->nombre_categoria}}
                         @else
-                            Sin categoria
+                            Error de categoria
 
                         @endif
                     </td>

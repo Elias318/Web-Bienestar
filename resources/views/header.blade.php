@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="css/inicio_session.css">
         <link rel="stylesheet" href="css/vistaAdmin.css">
         <link rel="stylesheet" href="css/ejercicioCreate.css">
+        <link rel="stylesheet" href="css/ejercicios.css">
+
 
 
 

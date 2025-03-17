@@ -19,10 +19,14 @@
                 @enderror
 
                 <label for="">Seleccionar Categoria</label>
+               
+
+
                 <select name="categoria-entrada" id="categoria-entrada">
-                    <option value="3" selected>Sin categoría</option>
-                    <option value="2">Cuerpo</option>
-                    <option value="1">Mente</option>
+                    @foreach ($categorias as $categoria)
+                    <option value="{{$categoria->id_categoria}}" selected>{{$categoria->nombre_categoria}}</option>
+                    @endforeach
+                    
 
                 </select>
                 
