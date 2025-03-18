@@ -3,43 +3,44 @@
         
         <div class="container-general-blog">
             <div class="container-categorias-ejercicios">
-                <button id="btnAbdominales" class="btnCategoria">Abdominales</button>
-                <button id="btnPiernas" class="btnCategoria">Piernas</button>
-                <button id="btnBrazos" class="btnCategoria">brazos</button>
-                <button id="btnEstiramiento" class="btnCategoria">Estiramiento</button>
-                
+               
+                @foreach ($categorias as $categoria)
+                    <button data-id="{{$categoria->id_categoria}}" class="btnCategoria">{{$categoria->nombre_categoria}}</button>
+                    
+                @endforeach
+
             </div>
-
-            <div class="container-ejercicios">
+            
+            <div id="container-entradas">
+                @foreach ($entradas as $entrada)
                 <div class="tarjeta-ejercicio">
-                    <img src="" alt="Img ejercicio">
-
+                    <img class="imgDestacada" src="{{$entrada->imagenDestacada}}" alt="Img ejercicio">
+                    <div class="container-dificultad-categoria">
+                        <div class="container-dificultad">
+                            {{$entrada->dificultad}}
+                        </div>
+                        <div class="container-categoria">
+                            {{$entrada->categoria->nombre_categoria}}
+                        </div>
+                    </div>
                     <div class="container-descripcion-ejercicio">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad perspiciatis sed velit voluptatibus ratione earum dignissimos inventore? Nemo deserunt corporis dolores quidem? Cumque, expedita officiis dolorem ipsa nulla accusantium.
+                            {{$entrada->titulo_entrada}}
                         </p>
                     </div>
+                    <!-- Modificar la llamada al onclick -->
+                    <button class="btnCategoriaPopUp" onclick="mostrarPopUp('{{ addslashes($entrada->imagenDestacada) }}', '{{ addslashes($entrada->descripcion_entrada) }}')">Ver más</button>
+
                 </div>
-                <div class="tarjeta-ejercicio">
-                    <img src="" alt="Img ejercicio">
+                @endforeach 
 
-                    <div class="container-descripcion-ejercicio">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad perspiciatis sed velit voluptatibus ratione earum dignissimos inventore? Nemo deserunt corporis dolores quidem? Cumque, expedita officiis dolorem ipsa nulla accusantium.
-                        </p>
-                    </div>
-                </div>
-                <div class="tarjeta-ejercicio">
-                    <img src="" alt="Img ejercicio">
+                <!-- Pop-Up -->
+                <div class="popup-overlay" id="popupOverlay" style="display: none;"></div>
 
-                    <div class="container-descripcion-ejercicio">
-                        <p>
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad perspiciatis sed velit voluptatibus ratione earum dignissimos inventore? Nemo deserunt corporis dolores quidem? Cumque, expedita officiis dolorem ipsa nulla accusantium.
-                        </p>
-                    </div>
+                <div id="popup" style="display: none;">
+                    <!-- Contenido dinámico se inyecta aquí -->
                 </div>
             </div>
-        </div>
-    </body>
+  
 
 @include('footer')

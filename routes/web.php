@@ -19,9 +19,11 @@ Route::get('/iniciar-sesion', function () {
     return view('loggin.inicio_sesion');
 })->name('iniciar-sesion');
 
-Route::get('/ejercicios', function () {
-    return view('ejercicios.cuerpo.ejercicios');
-})->name('ejercicios');
+Route::get('/ejercicios/categoria/{id}', [EntradaController::class, 'filtrarPorCategoria']);
+
+
+Route::get('/ejercicios', [EntradaController::class,'index'])->name('ejercicios');
+
 
 Route::get('/vistaAdmin', [AdminController::class,'mostrarPanel'])->name('vistaAdmin');
 
